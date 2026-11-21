@@ -3,6 +3,26 @@
 <title>Snack Inventory</title><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 body{font-family:system-ui,sans-serif;background:#f3f5fa;color:#182238;margin:0}header{background:#18345b;color:white;padding:18px}main{max-width:900px;margin:18px auto;padding:0 12px}.card{background:white;border:1px solid #e1e6ef;border-radius:12px;padding:15px;margin:12px 0}h1{font-size:21px;margin:0}h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}input,select,button{box-sizing:border-box;width:100%;padding:11px;border:1px solid #cbd3df;border-radius:8px;font:inherit;margin:4px 0}button{background:#2457d6;color:white;border:0;font-weight:650}button.alt{background:#e8eefb;color:#183b80}.row{display:flex;gap:8px}.row button{width:auto}table{border-collapse:collapse;width:100%;min-width:580px}td,th{text-align:left;padding:9px;border-bottom:1px solid #e7eaf0}.scroll{overflow:auto}.muted{color:#68758a;font-size:13px}.hide{display:none}.msg{padding:10px;background:#eef4ff;border-radius:8px;margin-top:8px}.err{background:#fff0ef;color:#9b2118}.letterbar{display:flex;gap:6px;overflow-x:auto;padding:5px 2px 10px;white-space:nowrap;scrollbar-width:thin;touch-action:pan-x}.letterbar button{flex:0 0 auto;width:auto;min-width:38px;padding:8px 11px;margin:0;border-radius:20px;background:#e8eefb;color:#183b80}.letterbar button.active{background:#2457d6;color:#fff}.listbox{max-height:55vh;overflow:auto}.listbox thead th{position:sticky;top:0;background:#f7f9fd;z-index:1}.unitcustom{display:none}.hint{font-size:12px;color:#68758a;margin:2px 0 8px}
+
+/* Mobile: fit the complete product table on screen without horizontal scrolling */
+@media (max-width:600px){
+  header{padding:12px} h1{font-size:18px} main{margin:8px auto;padding:0 6px}
+  .card{padding:9px;margin:8px 0;border-radius:10px} h2{font-size:14px;margin-bottom:8px}
+  body{font-size:13px} .muted{font-size:11px} .hint{font-size:10px}
+  input,select,button{font-size:12px;padding:8px;margin:3px 0}
+  .letterbar{gap:4px;padding:4px 1px 7px}
+  .letterbar button{min-width:30px;padding:6px 8px;font-size:11px}
+  .listbox{overflow-x:hidden;max-height:55vh}
+  .listbox table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse}
+  .listbox th,.listbox td{font-size:10px;line-height:1.25;padding:5px 2px;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
+  .listbox th:nth-child(1),.listbox td:nth-child(1){width:22%}
+  .listbox th:nth-child(2),.listbox td:nth-child(2){width:13%}
+  .listbox th:nth-child(3),.listbox td:nth-child(3){width:14%}
+  .listbox th:nth-child(4),.listbox td:nth-child(4){width:13%}
+  .listbox th:nth-child(5),.listbox td:nth-child(5){width:10%}
+  .listbox th:nth-child(6),.listbox td:nth-child(6){width:28%}
+  .listbox td button{display:inline-block;width:auto;font-size:9px;padding:4px 5px;margin:1px 0;border-radius:5px}
+}
 </style></head><body><header><h1>🍪 Snack Inventory</h1><div class="muted" style="color:#d8e2f2">မုန့်ပစ္စည်း စာရင်းနှင့် အရောင်းစီမံခန့်ခွဲမှု</div></header><main>
 <section id="config" class="card"><h2>Supabase ချိတ်ဆက်ရန်</h2><p class="muted">Project URL နှင့် Publishable Key ကို ထည့်ပါ။ Secret Key မသုံးပါနှင့်။</p>
 <input id="url" placeholder="https://your-project.supabase.co"><input id="key" placeholder="sb_publishable_..."><button id="connect">ချိတ်ဆက်မယ်</button><div id="cmsg" class="msg hide"></div></section>
